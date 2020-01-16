@@ -137,7 +137,7 @@ $appDescription = 'JobBoard';
         </div><!-- /#content -->
 
         <footer class="p-4 text-center">
-            <p>Copyright &copy; 2019, JobBoard - All Rights Reserved</p>
+            <p>Copyright &copy; <?= date("Y") ?>, JobBoard - All Rights Reserved</p>
             <p>
                 <a href="#">Back to top</a>
             </p>
