@@ -15,7 +15,6 @@ class UsersController extends AppController
     public function initialize()
     {
         parent::initialize();
-        $this->loadComponent('CheckDemo');
     }
 
     public function register()
@@ -26,10 +25,6 @@ class UsersController extends AppController
 
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
-            if ($this->CheckDemo->redirect()) {
-                return;
-            }
-
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('You are now registered and may login!'));
@@ -55,8 +50,6 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('Invalid email or password, try again!'));
         }
-
-        $this->set('isDemo', $this->CheckDemo->check());
     }
 
     public function logout()

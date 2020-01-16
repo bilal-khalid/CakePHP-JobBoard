@@ -15,7 +15,6 @@ class JobsController extends AppController
     public function initialize()
     {
         parent::initialize();
-        $this->loadComponent('CheckDemo');
     }
 
     /**
@@ -106,10 +105,6 @@ class JobsController extends AppController
     {
         $job = $this->Jobs->newEntity();
         if ($this->request->is('post')) {
-            if ($this->CheckDemo->redirect()) {
-                return;
-            }
-
             $job = $this->Jobs->patchEntity($job, $this->request->getData());
             $job->user_id = $this->Auth->user('id');
             if ($this->Jobs->save($job)) {
@@ -138,10 +133,6 @@ class JobsController extends AppController
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            if ($this->CheckDemo->redirect()) {
-                return;
-            }
-
             $job = $this->Jobs->patchEntity($job, $this->request->getData());
             if ($this->Jobs->save($job)) {
                 $this->Flash->success(__('The job has been saved.'));
@@ -167,10 +158,6 @@ class JobsController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
 
-        if ($this->CheckDemo->redirect()) {
-            return;
-        }
-        
         $job = $this->Jobs->get($id);
         if ($this->Jobs->delete($job)) {
             $this->Flash->success(__('The job has been deleted.'));

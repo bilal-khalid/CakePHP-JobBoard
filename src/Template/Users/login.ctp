@@ -5,15 +5,6 @@
  */
 ?>
 <h2 class="mb-5">Login</h2>
-<?php if ($isDemo) : ?>
-    <div class="alert alert-info" role="alert">
-        <p>Demo account:</p>
-        <p>
-            username: <strong>demo</strong><br>
-            password: <strong>demo</strong>
-        </p>
-    </div>
-<?php endif ?>
 <?= $this->Flash->render('auth') ?>
 <?= $this->Form->create() ?>
     <div class="form-group row">
