@@ -5,6 +5,7 @@
 /logs/*
 /tmp/*
 /vendor/*
+phinx.yml
 
 # OS generated files #
 ######################
