@@ -26,7 +26,7 @@ class JobsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'order' => ['Jobs.created' => 'DESC'],
+            'order' => ['Jobs.created' => 'DESC', 'Jobs.id' => 'DESC'],
             'contain' => ['Categories', 'Users', 'Types']
         ];
         $jobs = $this->paginate($this->Jobs);
@@ -69,7 +69,7 @@ class JobsController extends AppController
         }
 
         $this->paginate = [
-            'order' => ['Jobs.created' => 'DESC'],
+            'order' => ['Jobs.created' => 'DESC', 'Jobs.id' => 'DESC'],
             'contain' => ['Types']
         ];
         $jobs = $this->paginate($jobs);
