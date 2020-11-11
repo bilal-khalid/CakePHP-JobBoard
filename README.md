@@ -8,6 +8,8 @@ A job board where users can browse and search for jobs, and employers can submit
 2. [Bootstrap](https://getbootstrap.com/)
 3. [jQuery](https://jquery.com/)
 
-## Demo
+## Preview
 
-[![View Demo](view_demo_button.png)](https://bilalkhalid.com/projects/jobboard)
+Job Board | 
+------------ | 
+![](project-job-board.png) | 
